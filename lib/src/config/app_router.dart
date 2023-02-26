@@ -14,7 +14,7 @@ class AppRouter {
   late final GoRouter router = GoRouter(
     routes: <GoRoute>[
       GoRoute(
-        path: '/',
+        path: '/feed',
         name: 'feed',
         builder: (BuildContext context, GoRouterState state) {
           return const FeedScreen();
@@ -37,19 +37,20 @@ class AppRouter {
         ],
       ),
       GoRoute(
-        path: '/login',
-        name: 'login',
-        builder: (BuildContext context, GoRouterState state) {
-          return LoginScreen();
-        },
-      ),
-      GoRoute(
-        path: '/signup',
-        name: 'signup',
-        builder: (BuildContext context, GoRouterState state) {
-          return SignupScreen();
-        },
-      ),
+          path: '/',
+          name: 'login',
+          builder: (BuildContext context, GoRouterState state) {
+            return LoginScreen();
+          },
+          routes: [
+            GoRoute(
+              path: 'signup',
+              name: 'signup',
+              builder: (BuildContext context, GoRouterState state) {
+                return SignupScreen();
+              },
+            ),
+          ]),
     ],
     // TODO redirect user to login screen when not authenticated
     // else, go to feed

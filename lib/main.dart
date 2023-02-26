@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:social_media_clean_arquitechture_bloc/src/config/app_router.dart';
+import 'src/config/app_router.dart';
 
 import 'src/config/app_theme.dart';
 import 'src/shared/presentation/widgets/custom_nav_bar.dart';
